@@ -46,8 +46,18 @@ const DetailsComponent = () => {
     }
   }, [data]);
 
-  if (!details) return <h1>No data</h1>;
-  if (loading) return <h1>Loading...</h1>;
+  if (!details)
+    return (
+      <div className="flex h-screen justify-center items-center">
+        <h1>No data</h1>
+      </div>
+    );
+  if (loading)
+    return (
+      <div className="flex h-screen justify-center items-center">
+        <h1>Loading...</h1>
+      </div>
+    );
   if (error) return <h1>{error}</h1>;
   return (
     <div className="w-full h-[100vh] flex flex-col  items-center gap-5">

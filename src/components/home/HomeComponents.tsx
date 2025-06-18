@@ -60,9 +60,19 @@ const HomeComponents = () => {
     fetchEquipments();
   }, []);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1>Loading...</h1>
+      </div>
+    );
+  if (!equipments)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1>No equipments</h1>
+      </div>
+    );
   if (error) return <h1>{error}</h1>;
-  if (!equipments) return <h1>No equipments</h1>;
   return (
     <div className="w-full h-full flex flex-col items-center gap-5">
       <div className="input-search w-[50%] flex justify-center mt-4">
